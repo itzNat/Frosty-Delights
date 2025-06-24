@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frosty Delights | Artisanal Ice Cream</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="glass-effect fixed w-full z-50 py-4 px-6 transition-colors duration-500" id="main-nav">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center">
+        <i class="fas fa-ice-cream text-3xl mr-2 text-pink-500 transition-colors duration-500" id="nav-icon"></i>
+        <span
+          class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600 transition-all duration-500"
+          id="nav-logo">Frosty Delights</span>
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-800 hover:text-pink-500 transition nav-link" data-color="pink">Home</a>
+        <a href="#flavors" class="text-gray-800 hover:text-pink-500 transition nav-link" data-color="pink">Flavors</a>
+        <a href="#menu" class="text-gray-800 hover:text-pink-500 transition nav-link" data-color="pink">Menu</a>
+        <a href="#about" class="text-gray-800 hover:text-pink-500 transition nav-link" data-color="pink">About</a>
+        <a href="#contact" class="text-gray-800 hover:text-pink-500 transition nav-link" data-color="pink">Contact</a>
+      </div>
+      <button class="md:hidden text-gray-800">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section id="home"
+    class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500"
+    style="background-color: #fef6f4">
+    <div class="absolute inset-0 bg-[url('images/icecreamHand.jpg')] opacity-20 parallax"></div>
+    <div class="container mx-auto px-6 z-10">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-3/5 mb-10 md:mb-0">
+          <h1
+            class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600 transition-all duration-500"
+            id="hero-title">
+            Cool Happiness
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-gray-700 transition-colors duration-500" id="hero-subtitle">
+            Handcrafted ice cream made with love and the finest ingredients
+          </p>
+          <div class="flex space-x-4">
+            <a href="#menu">
+              <button
+                class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full font-semibold transition transform hover:scale-105 transition-colors duration-500"
+                id="primary-btn">
+                Our Menu
+              </button>
+            </a>
+            <button
+              class="border-2 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white px-8 py-3 rounded-full font-semibold transition transform hover:scale-105 transition-colors duration-500"
+              id="secondary-btn">
+              Order Now
+            </button>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center relative">
+          <div class="ice-cream-container floating relative w-[80vw] h-[80vh]">
+            <img src="./images/iceCream-pink.png" alt="Pink Ice Cream" class="ice-cream-img active" data-flavor="pink">
+            <img src="./images/iceCream-yellow.png" alt="Yellow Ice Cream" class="ice-cream-img inactive"
+              data-flavor="yellow">
+            <img src="./images/iceCream-green.png" alt="Green Ice Cream" class="ice-cream-img inactive"
+              data-flavor="green">
+            <img src="./images/iceCream-brown.png" alt="Brown Ice Cream" class="ice-cream-img inactive"
+              data-flavor="brown">
+            <img src="./images/iceCream-chocoVanilla.png" alt="ChocoVanilla Ice Cream" class="ice-cream-img inactive"
+              data-flavor="chocoVanilla">
+          </div>
+          <!-- Flavor Selector -->
+          <div class="absolute bottom-10 left-0 right-0 flex justify-center space-x-4">
+            <div class="flavor-btn bg-[#ec4899] active" onclick="changeFlavor('pink')" data-color="pink"></div>
+            <div class="flavor-btn bg-yellow-300" onclick="changeFlavor('yellow')" data-color="yellow"></div>
+            <div class="flavor-btn bg-green-300" onclick="changeFlavor('green')" data-color="green"></div>
+            <div class="flavor-btn bg-orange-600" onclick="changeFlavor('brown')" data-color="brown"></div>
+            <div class="flavor-btn bg-amber-300" onclick="changeFlavor('chocoVanilla')" data-color="chocoVanilla"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Flavors Section -->
+  <section id="flavors" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-gray-800">
+          Our Signature Flavors
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Each scoop is a masterpiece crafted with premium ingredients and
+          innovative techniques
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="glass-effect rounded-2xl p-8 text-center hover:shadow-xl transition">
+          <div
+            class="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-pink-300 to-pink-500 flex items-center justify-center">
+            <i class="fas fa-stroopwafel text-6xl text-white"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800">Berry Bliss</h3>
+          <p class="text-gray-600">
+            A delightful mix of fresh strawberries, raspberries and
+            blackberries in a creamy vanilla base
+          </p>
+        </div>
+        <div class="glass-effect rounded-2xl p-8 text-center hover:shadow-xl transition">
+          <div
+            class="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center">
+            <i class="fas fa-cookie text-6xl text-white"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800">
+            Caramel Crunch
+          </h3>
+          <p class="text-gray-600">
+            Rich caramel ice cream loaded with chunks of chocolate-covered
+            toffee and caramel swirls
+          </p>
+        </div>
+        <div class="glass-effect rounded-2xl p-8 text-center hover:shadow-xl transition">
+          <div
+            class="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center">
+            <i class="fas fa-leaf text-6xl text-white"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800">Minty Marvel</h3>
+          <p class="text-gray-600">
+            Refreshing mint ice cream with dark chocolate chunks and a hint of
+            peppermint oil
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Parallax Section -->
+  <section class="parallax py-32" style="
+        background-image: url('images/icecreamSprinkles.jpg');
+      ">
+    <div class="container mx-auto px-6 text-center">
+      <div class="glass-effect inline-block px-10 py-8 rounded-2xl">
+        <h2 class="text-4xl font-bold mb-4 text-white">Summer Special</h2>
+        <p class="text-xl text-white mb-6">
+          Buy 2 scoops, get 1 free! Limited time offer
+        </p>
+        <button class="bg-white text-pink-500 px-8 py-3 rounded-full font-semibold transition transform hover:scale-105"
+          id="claim-offer-btn">
+          Claim Offer
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Menu Section -->
+  <section id="menu" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-gray-800">
+          Our Delicious Menu
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Something sweet for every taste and occasion
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Menu Item 1 -->
+        <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl">
+          <div class="h-48 bg-gradient-to-r from-pink-200 to-pink-300 flex items-center justify-center">
+            <div class="relative w-32 h-40">
+              <div
+                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-32 bg-gradient-to-b from-amber-200 to-amber-400 rounded-b-lg"
+                style="clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%)"></div>
+              <div class="absolute bottom-24 left-1/2 transform -translate-x-1/2 w-32 h-24 rounded-full bg-pink-300">
+              </div>
+              <div class="absolute bottom-40 left-1/2 transform -translate-x-1/2 w-28 h-20 rounded-full bg-purple-300">
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2 text-gray-800">
+              Double Scoop Delight
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Two generous scoops of your favorite flavors in a crispy waffle
+              cone
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-pink-500">$5.99</span>
+              <button class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-full transition">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Menu Item 2 -->
+        <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl">
+          <div class="h-48 bg-gradient-to-r from-blue-200 to-blue-300 flex items-center justify-center">
+            <div class="relative w-40 h-40">
+              <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-white rounded-full"></div>
+              <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-16 bg-blue-300 rounded-t-full">
+              </div>
+              <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-full">
+              </div>
+              <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-12 bg-blue-400 rounded-t-full">
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2 text-gray-800">
+              Ice Cream Sandwich
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Vanilla ice cream sandwiched between two homemade chocolate chip
+              cookies
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-blue-500">$4.99</span>
+              <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full transition">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Menu Item 3 -->
+        <div class="menu-item bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl">
+          <div class="h-48 bg-gradient-to-r from-purple-200 to-purple-300 flex items-center justify-center">
+            <div class="relative w-40 h-40">
+              <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-white rounded-lg"></div>
+              <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-24 bg-purple-300 rounded-t-lg">
+              </div>
+              <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-28 h-16 bg-purple-400 rounded-t-lg">
+              </div>
+              <div class="absolute bottom-24 left-1/2 transform -translate-x-1/2 w-24 h-8 bg-purple-500 rounded-t-lg">
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2 text-gray-800">
+              Sundae Supreme
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Three scoops topped with hot fudge, whipped cream, nuts and a
+              cherry
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-xl font-bold text-purple-500">$7.99</span>
+              <button class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-full transition">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+          <h2 class="text-4xl font-bold mb-6 text-gray-800">Our Story</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Founded in 2015, Frosty Delights began as a small family-owned
+            shop with a passion for creating the creamiest, most flavorful ice
+            cream using traditional methods and the finest ingredients.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            Today, we continue that tradition, sourcing local dairy and
+            seasonal fruits to craft our small-batch ice creams that keep our
+            customers coming back for more.
+          </p>
+          <div class="flex space-x-4">
+            <div class="text-center">
+              <div class="statistic text-4xl font-bold text-pink-500">50+</div>
+              <div class="text-gray-600">Flavors</div>
+            </div>
+            <div class="text-center">
+              <div class="statistic text-4xl font-bold text-pink-500">100%</div>
+              <div class="text-gray-600">Natural</div>
+            </div>
+            <div class="text-center">
+              <div class="statistic text-4xl font-bold text-pink-500">24</div>
+              <div class="text-gray-600">Hours Fresh</div>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2 relative">
+          <div class="glass-effect rounded-2xl p-6 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Ice cream making" class="w-full h-auto rounded-lg" />
+          </div>
+          <div class="absolute -bottom-6 -right-6 bg-pink-500 text-white px-6 py-3 rounded-lg shadow-lg"
+            id="award-badge">
+            <div class="flex items-center">
+              <i class="fas fa-award text-2xl mr-2"></i>
+              <span class="font-bold">Best Ice Cream 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-gray-800">Visit Us</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          We'd love to scoop some happiness for you!
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="glass-effect rounded-2xl p-8">
+          <h3 class="text-2xl font-bold mb-6 text-gray-800">Our Location</h3>
+          <div class="space-y-4">
+            <div class="flex items-start text-pink-500 contact-icon">
+              <i class="text-inherit fas fa-map-marker-alt text-xl mt-1 mr-4"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800">Address</h4>
+                <p class="text-gray-600">
+                  123 Sweet Street, Flavor Town, FT 12345
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start text-pink-500 contact-icon">
+              <i class="text-inherit fas fa-clock text-xl mt-1 mr-4"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800">Hours</h4>
+                <p class="text-gray-600">Monday-Friday: 11AM - 10PM</p>
+                <p class="text-gray-600">Saturday-Sunday: 10AM - 11PM</p>
+              </div>
+            </div>
+            <div class="flex items-start text-pink-500 contact-icon">
+              <i class="text-inherit fas fa-phone-alt text-xl mt-1 mr-4"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800">Phone</h4>
+                <p class="text-gray-600">(123) 456-7890</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <h4 class="font-semibold text-gray-800 mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a href="#"
+                class="social-icon w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center hover:bg-pink-600 transition">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#"
+                class="social-icon w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center hover:bg-pink-600 transition">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#"
+                class="social-icon w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center hover:bg-pink-600 transition">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#"
+                class="social-icon w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center hover:bg-pink-600 transition">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="glass-effect rounded-2xl p-8">
+          <h3 class="text-2xl font-bold mb-6 text-gray-800">Get In Touch</h3>
+          <form>
+            <div class="mb-4">
+              <label for="name" class="block text-gray-700 mb-2">Name</label>
+              <input type="text" id="name"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700 mb-2">Email</label>
+              <input type="email" id="email"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block text-gray-700 mb-2">Message</label>
+              <textarea id="message" rows="4"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+            </div>
+            <button type="submit"
+              class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition w-full"
+              id="contact-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center mb-4 text-pink-500" id="footer-ice-cream">
+            <i class="fas fa-ice-cream text-3xl mr-2 text-inherit"></i>
+            <span class="text-2xl font-bold text-white">Frosty Delights</span>
+          </div>
+          <p class="text-gray-400">
+            Crafting happiness one scoop at a time since 2015.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
+            </li>
+            <li>
+              <a href="#flavors" class="text-gray-400 hover:text-white transition">Flavors</a>
+            </li>
+            <li>
+              <a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a>
+            </li>
+            <li>
+              <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
+            </li>
+            <li>
+              <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+          <p class="text-gray-400 mb-4">
+            Subscribe to get updates on new flavors and special offers!
+          </p>
+          <div class="flex">
+            <input type="email" placeholder="Your email"
+              class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full" />
+            <button class="bg-pink-500 hover:bg-pink-600 px-4 py-2 rounded-r-lg transition" id="newsletter-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
+        <p>&copy; 2025 Frosty Delights. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
