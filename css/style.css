@@ -17,6 +17,19 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+#mobile-menu {
+  transition: all 0.3s ease;
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+#mobile-menu.flex {
+
+  transform: scaleY(1);
+  opacity: 1;
+}
+
 .hero-bg {
   background-size: cover;
   background-position: center;
@@ -105,4 +118,15 @@ body {
 .ice-cream-img.inactive {
   opacity: 0;
   transform: translateY(20px);
+}
+
+@media (max-width: 767px) {
+  #mobile-menu a {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  #mobile-menu a:last-child {
+    border-bottom: none;
+  }
 }

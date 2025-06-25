@@ -1,3 +1,45 @@
+// Mobile menu functionality
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
+
+mobileMenuButton.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.contains('hidden');
+  
+  // Toggle menu visibility
+  mobileMenu.classList.toggle('hidden');
+  mobileMenu.classList.toggle('flex');
+  
+  // Change icon between bars and times
+  if (isOpen) {
+    menuIcon.classList.remove('fa-bars');
+    menuIcon.classList.add('fa-times');
+  } else {
+    menuIcon.classList.remove('fa-times');
+    menuIcon.classList.add('fa-bars');
+  }
+  
+  // Close menu when clicking on a link
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      menuIcon.classList.remove('fa-times');
+      menuIcon.classList.add('fa-bars');
+    });
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+    menuIcon.classList.remove('fa-times');
+    menuIcon.classList.add('fa-bars');
+  }
+});
+
 // Color theme
 const colorThemes = {
   pink: {
